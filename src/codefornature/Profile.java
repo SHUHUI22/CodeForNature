@@ -77,7 +77,7 @@ public class Profile extends javax.swing.JFrame {
         jLabel3.setText("Email:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, -1, -1));
 
-        fEmail.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        fEmail.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         fEmail.setForeground(new java.awt.Color(0, 102, 102));
         fEmail.setText("email");
         getContentPane().add(fEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 300, -1, -1));
@@ -120,7 +120,7 @@ public class Profile extends javax.swing.JFrame {
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(0, 102, 102));
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\UM\\Y1\\S1\\FOP\\CodeForNature\\src\\icon\\profile bg.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\UM\\Y1\\S1\\FOP\\CodeForNature\\src\\icon\\profile bg2.jpg")); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 750));
 
         pack();

@@ -99,7 +99,7 @@ public class Donation extends javax.swing.JFrame {
         fNGO.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         getContentPane().add(fNGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 430, 280, 56));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\UM\\Y1\\S1\\FOP\\CodeForNature\\src\\icon\\donate bg.jpg")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\UM\\Y1\\S1\\FOP\\CodeForNature\\src\\icon\\donate bg2.jpg")); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 750));
 
         pack();

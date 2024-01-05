@@ -254,7 +254,7 @@
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\UM\Y1\S1\FOP\CodeForNature\src\icon\trivia bg.jpg"/>
+          <Image iconType="2" name="D:\UM\Y1\S1\FOP\CodeForNature\src\icon\trivia bg2.jpg"/>
         </Property>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[1200, 944]"/>
@@ -268,7 +268,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="1130" height="750"/>
+          <AbsoluteConstraints x="-30" y="-40" width="1130" height="750"/>
         </Constraint>
       </Constraints>
     </Component>

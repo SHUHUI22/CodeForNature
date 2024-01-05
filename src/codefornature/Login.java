@@ -249,6 +249,8 @@ public class Login extends javax.swing.JFrame {
                     regDateDB=rs.getString("regDate");
                     found=true;
                 }
+                SchedulerService.scheduleNotification(usernameDB, email);
+
                 if(found&&password.equals(passwordDB)){
                     Home HomeFrame=new Home(usernameDB,currentPointsDB,email,passwordDB,regDateDB);
                     HomeFrame.setVisible(true);
@@ -262,7 +264,7 @@ public class Login extends javax.swing.JFrame {
                 fEmail.setText("");
                 fPassword.setText("");
             }
-            Notification notification=new Notification(usernameDB,email);
+            
         }
         catch(Exception e){
             System.out.println("Error! "+e.getMessage());

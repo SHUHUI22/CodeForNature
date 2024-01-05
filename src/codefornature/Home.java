@@ -177,7 +177,7 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(pointShopBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(741, 435, 209, 55));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\UM\\Y1\\S1\\FOP\\CodeForNature\\src\\icon\\menu bg.jpg")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\UM\\Y1\\S1\\FOP\\CodeForNature\\src\\icon\\menu bg2.jpg")); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 750));
 
         pack();

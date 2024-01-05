@@ -48,6 +48,7 @@ public class Start extends javax.swing.JFrame {
         this.day=day;
         fDay.setText(Integer.toString(day));
         readFile();
+        
         displayTrivia(day);
         fOptionA.addActionListener(e -> {       // Associate button A with choice A
             count(day);
@@ -171,11 +172,11 @@ public class Start extends javax.swing.JFrame {
         fOptionD.setText("jButton2");
         getContentPane().add(fOptionD, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 580, 440, 103));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\UM\\Y1\\S1\\FOP\\CodeForNature\\src\\icon\\trivia bg.jpg")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\UM\\Y1\\S1\\FOP\\CodeForNature\\src\\icon\\trivia bg2.jpg")); // NOI18N
         jLabel8.setMaximumSize(new java.awt.Dimension(1200, 944));
         jLabel8.setMinimumSize(new java.awt.Dimension(1200, 944));
         jLabel8.setPreferredSize(new java.awt.Dimension(1200, 944));
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 750));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -40, 1130, 750));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

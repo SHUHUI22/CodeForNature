@@ -28,7 +28,6 @@ public class PlantTree extends javax.swing.JFrame {
      */
     public PlantTree(PointShop PointShopFrame,String username) {
         this.PointShopFrameReference=PointShopFrame;
-        //this.points=points;
         this.username=username;
         initComponents();
     }
@@ -104,7 +103,7 @@ public class PlantTree extends javax.swing.JFrame {
         });
         getContentPane().add(checkOutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 570, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\UM\\Y1\\S1\\FOP\\CodeForNature\\src\\icon\\tree bg.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\UM\\Y1\\S1\\FOP\\CodeForNature\\src\\icon\\tree bg2.jpg")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 750));
 
         pack();
@@ -136,7 +135,7 @@ public class PlantTree extends javax.swing.JFrame {
                     points=rs.getInt("points");
                 }
             if(name.equals("")){
-                JOptionPane.showMessageDialog(new JFrame(),"Please enter amount.","Error",JOptionPane.ERROR_MESSAGE); 
+                JOptionPane.showMessageDialog(new JFrame(),"Please enter name to be written on the planted tree.","Error",JOptionPane.ERROR_MESSAGE); 
             }
             else{
                 if(points>=1000){

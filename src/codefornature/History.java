@@ -31,9 +31,61 @@ public class History extends javax.swing.JFrame {
         this.username=username;
         this.day=day;
         initComponents();
+        displayNoAttemptQuestion();
         setupBtn();
         
     }
+    
+    public void displayNoAttemptQuestion(){
+        String SUrl,SUser,SPass,query;
+        int attempt=0;
+        ArrayList<Integer> allQs=new ArrayList<>();
+        ArrayList<Integer> RepeatableQs=new ArrayList<>();
+        boolean correct=false;
+        
+        SUrl="jdbc:mysql://localhost:3306/user";
+        SUser="root";
+        SPass="";
+            try{
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection con=DriverManager.getConnection(SUrl,SUser,SPass);
+                Statement st=con.createStatement();
+                query="SELECT * FROM attempt WHERE username='"+username+"'";
+                ResultSet rs=st.executeQuery(query);
+                while(rs.next()){
+                    allQs.add(rs.getInt("day"));
+                }
+                for(int i=1;i<=10;i++){
+                    if(!allQs.contains(i)){
+                        RepeatableQs.add(i);
+                    }
+                    else{
+                        query = "SELECT * FROM attempt WHERE username='" + username + "' AND day=" + i;
+                        rs = st.executeQuery(query);
+                        if (rs.next()) {
+                            correct = rs.getBoolean("correct");
+                            attempt = rs.getInt("attempt");
+                            if (!correct && attempt == 1) {
+                                RepeatableQs.add(i);
+                              
+                            }
+                        }
+                    }
+                }
+                StringBuilder sb=new StringBuilder();
+                for(int i:RepeatableQs){
+                    sb.append(i+"   ");
+                    
+                }
+                String stringRepeatableQs=sb.toString();
+                fQs.setText(stringRepeatableQs);
+            
+            }
+            catch(Exception e){
+                System.out.println(e.getMessage()); 
+            }
+    }
+    
     public void setupBtn(){
         goBtn.addActionListener (e -> {
             String SUrl,SUser,SPass,query;
@@ -70,9 +122,10 @@ public class History extends javax.swing.JFrame {
             if(found){
                 if(attempt>2||correct==true){
                     TriviaFrameReference.passQ(question);
+                    fQs.setVisible(false);
                     this.dispose();
                     }
-                if(attempt==0||correct==false||(attempt==1&&correct==false)){
+                if(attempt==0&&correct==false||(attempt==1&&correct==false)){
                     TriviaFrameReference.page(question);
                     this.dispose();
                 }    
@@ -101,6 +154,8 @@ public class History extends javax.swing.JFrame {
         fQuestion = new javax.swing.JTextField();
         clearBtn = new javax.swing.JButton();
         goBtn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        fQs = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -155,8 +210,19 @@ public class History extends javax.swing.JFrame {
         goBtn.setText("GO");
         getContentPane().add(goBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 590, 180, 70));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\UM\\Y1\\S1\\FOP\\CodeForNature\\src\\icon\\trivia bg.jpg")); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 750));
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel3.setText("No. of question that can be attempted: ");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 350, 50));
+
+        fQs.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        fQs.setForeground(new java.awt.Color(0, 51, 51));
+        fQs.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 51, 51), new java.awt.Color(0, 51, 51)));
+        getContentPane().add(fQs, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 340, 40));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\UM\\Y1\\S1\\FOP\\CodeForNature\\src\\icon\\trivia bg2.jpg")); // NOI18N
+        jLabel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, -30, 1130, 750));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -196,11 +262,13 @@ public class History extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
     private javax.swing.JButton clearBtn;
+    private javax.swing.JLabel fQs;
     private javax.swing.JTextField fQuestion;
     private javax.swing.JLabel fShow;
     private javax.swing.JButton goBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }

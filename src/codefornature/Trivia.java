@@ -7,6 +7,7 @@ package codefornature;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
  *
@@ -90,11 +91,11 @@ public class Trivia extends javax.swing.JFrame {
         });
         getContentPane().add(historyBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 408, 113));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\UM\\Y1\\S1\\FOP\\CodeForNature\\src\\icon\\trivia bg.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\UM\\Y1\\S1\\FOP\\CodeForNature\\src\\icon\\trivia bg2.jpg")); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(986, 750));
         jLabel1.setMinimumSize(new java.awt.Dimension(986, 750));
         jLabel1.setPreferredSize(new java.awt.Dimension(986, 750));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 750));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, -40, 1130, 750));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -108,16 +109,24 @@ public class Trivia extends javax.swing.JFrame {
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void startBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtnActionPerformed
-        Start StartFrame=new Start(this,points,username,regDate,day);
-        StartFrame.setVisible(true);
-        StartFrame.pack();
-        StartFrame.setLocationRelativeTo(null);
-        this.dispose();
+        try{
+            if(day>10){
+                showMessageDialog(null,"You can look at the answer or attempt previous questions that are not done at hidtory page.");  
+            }
+            else{
+                Start StartFrame=new Start(this,points,username,regDate,day);
+                StartFrame.setVisible(true);
+                StartFrame.pack();
+                StartFrame.setLocationRelativeTo(null);
+                this.dispose();
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_startBtnActionPerformed
 
     public void historyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyBtnActionPerformed
-        //Start StartPass=new Start(this);
-        //ArrayList<String>data=StartPass.getData(day);
         History HistoryFrame=new History(this,points,username,day);
         HistoryFrame.setVisible(true);
         HistoryFrame.pack();
