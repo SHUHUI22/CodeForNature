@@ -12,7 +12,7 @@ public class LoginAndRegistration {
     public static void main(String[] args) {
         Login LoginFrame=new Login();
         LoginFrame.setVisible(true);
-        LoginFrame.pack();
-        LoginFrame.setLocationRelativeTo(null);
+        LoginFrame.pack();  // Resize the frame based on the preferred sizes of components
+        LoginFrame.setLocationRelativeTo(null); // Center the frame on the screen
     }
 }

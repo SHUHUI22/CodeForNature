@@ -56,18 +56,20 @@ public class History extends javax.swing.JFrame {
                     allQs.add(rs.getInt("day"));
                 }
                 for(int i=1;i<=10;i++){
-                    if(!allQs.contains(i)){
-                        RepeatableQs.add(i);
-                    }
-                    else{
-                        query = "SELECT * FROM attempt WHERE username='" + username + "' AND day=" + i;
-                        rs = st.executeQuery(query);
-                        if (rs.next()) {
-                            correct = rs.getBoolean("correct");
-                            attempt = rs.getInt("attempt");
-                            if (!correct && attempt == 1) {
-                                RepeatableQs.add(i);
-                              
+                    if(i<=day){
+                        if(!allQs.contains(i)){
+                            RepeatableQs.add(i);
+                        }
+                        else{
+                            query = "SELECT * FROM attempt WHERE username='" + username + "' AND day=" + i;
+                            rs = st.executeQuery(query);
+                            if (rs.next()) {
+                                correct = rs.getBoolean("correct");
+                                attempt = rs.getInt("attempt");
+                                if (!correct && attempt == 1) {
+                                    RepeatableQs.add(i);
+
+                                }
                             }
                         }
                     }

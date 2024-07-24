@@ -111,7 +111,7 @@ public class Trivia extends javax.swing.JFrame {
     private void startBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtnActionPerformed
         try{
             if(day>10){
-                showMessageDialog(null,"You can look at the answer or attempt previous questions that are not done at hidtory page.");  
+                showMessageDialog(null,"You can look at the answer or attempt previous questions that are not done at history page.");  
             }
             else{
                 Start StartFrame=new Start(this,points,username,regDate,day);

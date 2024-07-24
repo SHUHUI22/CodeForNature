@@ -134,21 +134,6 @@ public class Profile extends javax.swing.JFrame {
         this.dispose();    
     }//GEN-LAST:event_backBtnActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    /*public void setUsername(String name){
-        fUsername.setText(name);
-    }
-    public void setEmail(String email){
-        fEmail.setText(email);
-    }
-    public void setPassword(String password){
-        fPassword.setText(password);
-    }
-    public void setRegDate(String regDate){
-        fRegDate.setText(regDate);
-    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;

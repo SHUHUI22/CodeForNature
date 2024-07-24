@@ -48,7 +48,7 @@ public class Home extends javax.swing.JFrame {
 
         profileBtn = new javax.swing.JButton();
         checkInBtn = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        newsBtn = new javax.swing.JButton();
         donationBtn = new javax.swing.JButton();
         triviaBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -87,19 +87,19 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(checkInBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 435, 209, 55));
 
-        jButton7.setBackground(new java.awt.Color(0, 102, 102));
-        jButton7.setFont(new java.awt.Font("Showcard Gothic", 1, 24)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("news section");
-        jButton7.setMaximumSize(new java.awt.Dimension(150, 37));
-        jButton7.setMinimumSize(new java.awt.Dimension(150, 37));
-        jButton7.setPreferredSize(new java.awt.Dimension(150, 37));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        newsBtn.setBackground(new java.awt.Color(0, 102, 102));
+        newsBtn.setFont(new java.awt.Font("Showcard Gothic", 1, 24)); // NOI18N
+        newsBtn.setForeground(new java.awt.Color(255, 255, 255));
+        newsBtn.setText("news section");
+        newsBtn.setMaximumSize(new java.awt.Dimension(150, 37));
+        newsBtn.setMinimumSize(new java.awt.Dimension(150, 37));
+        newsBtn.setPreferredSize(new java.awt.Dimension(150, 37));
+        newsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                newsBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 230, 55));
+        getContentPane().add(newsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 230, 55));
 
         donationBtn.setBackground(new java.awt.Color(0, 102, 102));
         donationBtn.setFont(new java.awt.Font("Showcard Gothic", 1, 24)); // NOI18N
@@ -198,11 +198,11 @@ public class Home extends javax.swing.JFrame {
         SUser="root";
         SPass="";
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con=DriverManager.getConnection(SUrl,SUser,SPass);
-            Statement st=con.createStatement();
-            query="SELECT * FROM checkin WHERE username='"+username+"'"; 
-            ResultSet rs=st.executeQuery(query);
+            Class.forName("com.mysql.cj.jdbc.Driver");  //This line loads the MySQL JDBC driver to build a connection to the database.
+            Connection con=DriverManager.getConnection(SUrl,SUser,SPass);   //Connect using a few credential 
+            Statement st=con.createStatement(); //to execute SQL queries against the database
+            query="SELECT * FROM checkin WHERE username='"+username+"'";    //Preparing a SQL Query to retrive data
+            ResultSet rs=st.executeQuery(query);    //executes the SQL query stored in the variable query and stores the results in a ResultSet object named rs
             LocalDate today=LocalDate.now();
             while(rs.next()){
                 lastCheckInDate=rs.getString("date");
@@ -215,7 +215,7 @@ public class Home extends javax.swing.JFrame {
                 }
             }
             if(!found){
-                query="INSERT INTO checkin(username,date)"+"VALUES('"+username+"','"+today+"')";
+                query="INSERT INTO checkin(username,date)"+"VALUES('"+username+"','"+today+"')";    //Insert a new check-in record into the checkin table with the username and today's date.
                 st.executeUpdate(query);
                 points++;
                 query = "UPDATE user SET points = " + points + " WHERE username = '" + username + "'";
@@ -230,9 +230,13 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_checkInBtnActionPerformed
    
     
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    private void newsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newsBtnActionPerformed
+        NewsSection NewsFrame=new NewsSection(this,username);
+        NewsFrame.setVisible(true);
+        NewsFrame.pack();
+        NewsFrame.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_newsBtnActionPerformed
 
     private void donationBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_donationBtnActionPerformed
         Donation DonationFrame=new Donation(this,points,username);
@@ -279,11 +283,11 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton donationBtn;
     private javax.swing.JLabel fPoints;
     private javax.swing.JLabel fUsername;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JButton logoutBtn;
+    private javax.swing.JButton newsBtn;
     private javax.swing.JButton pointShopBtn;
     private javax.swing.JButton profileBtn;
     private javax.swing.JButton triviaBtn;

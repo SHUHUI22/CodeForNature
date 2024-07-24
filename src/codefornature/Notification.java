@@ -52,6 +52,9 @@ public class Notification {
                 System.out.println("Failed to send email: " + e.getMessage());
             }
         }
+        else{
+            System.out.println("Check-In already");
+        }
     }
 
     public boolean hasCheckedIn() {

@@ -10,14 +10,12 @@ package codefornature;
  */
 public class PointShop extends javax.swing.JFrame {
     private final Home HomeFrameReference;
-    //private int points;
     private String username;
     /**
      * Creates new form PointShop
      */
     public PointShop(Home HomeFrame,String username) {
         this.HomeFrameReference=HomeFrame;
-        //this.points=points;
         this.username=username;
         initComponents();
     }

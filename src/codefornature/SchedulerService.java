@@ -16,7 +16,7 @@ public class SchedulerService {
     public static void scheduleNotification(String username, String email) {
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
         Notification notification = new Notification(username, email);
-        long initialDelay = notification.getDelay();
-        scheduler.scheduleAtFixedRate(notification::check, initialDelay, 24 * 60 * 60, TimeUnit.SECONDS); // Daily schedule
+        long initialDelay = notification.getDelay();    //Get the initial delay until the next scheduled time
+        scheduler.scheduleAtFixedRate(notification::check, initialDelay, 24 * 60 * 60, TimeUnit.SECONDS); //Schedule the check method to run at fixed rate every 24 hours
     }
 }
