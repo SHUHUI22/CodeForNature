@@ -3,13 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/UM/Y1/S1/FOP/CodeForNature/src/codefornature/Profile.java</file>
-            <file>file:/D:/UM/Y1/S1/FOP/CodeForNature/src/codefornature/PointShop.java</file>
-            <file>file:/D:/UM/Y1/S1/FOP/CodeForNature/src/codefornature/News.java</file>
+            <file>file:/D:/UM/Y1/S1/FOP/CodeForNature/src/codefornature/Register.java</file>
             <file>file:/D:/UM/Y1/S1/FOP/CodeForNature/src/codefornature/Home.java</file>
             <file>file:/D:/UM/Y1/S1/FOP/CodeForNature/src/codefornature/LoginAndRegistration.java</file>
-            <file>file:/D:/UM/Y1/S1/FOP/CodeForNature/src/codefornature/NewsSection.java</file>
-            <file>file:/D:/UM/Y1/S1/FOP/CodeForNature/src/codefornature/PlantTree.java</file>
+            <file>file:/D:/UM/Y1/S1/FOP/CodeForNature/src/codefornature/Login.java</file>
+            <file>file:/D:/UM/Y1/S1/FOP/CodeForNature/src/codefornature/ChangePassword.java</file>
         </group>
     </open-files>
 </project-private>
